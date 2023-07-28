@@ -1,0 +1,14 @@
+.navbar {
+  width: 210%;
+  color: rgb(123, 124, 124);
+  background-color: navy;
+  text-align: center;
+  display: flex;
+  position: sticky;
+  top: 1;
+  font-weight: bold;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 10px;
+  opacity: 100%;
+}
