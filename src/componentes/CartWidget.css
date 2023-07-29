@@ -1,0 +1,8 @@
+.carrito {
+    width: 50px;
+}
+
+.carritoCompleto {
+    display: inline-flex;
+    align-items: center;
+}

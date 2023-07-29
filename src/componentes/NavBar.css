@@ -1,5 +1,5 @@
 .navbar {
-  width: 210%;
+  width: 157%;
   color: rgb(123, 124, 124);
   background-color: navy;
   text-align: center;
@@ -11,4 +11,8 @@
   align-items: center;
   padding: 10px 10px;
   opacity: 100%;
+}
+
+.logo {
+  width: 200px;
 }

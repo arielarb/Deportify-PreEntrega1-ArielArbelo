@@ -1,0 +1,10 @@
+.estilos {
+  width: 159%;
+  height: 400px;
+  background-color: thistle;
+  color: dimgrey;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+}
