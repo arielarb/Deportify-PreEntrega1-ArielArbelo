@@ -1,5 +1,5 @@
 import "./ItemListContainer.css"
 
-export const ItemListContainer = () => {
-  return <h1 className="estilos">¡Bienvenidos a Deportify! </h1>
+export const ItemListContainer = ({texto}) => {
+  return <h1 className="estilos">{texto}</h1>
 }
