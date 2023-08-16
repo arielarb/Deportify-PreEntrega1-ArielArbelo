@@ -1,7 +1,20 @@
 body {
   background-color: black;
-  display: flex;
+  display: inline-flex;
   align-items: center;
   align-self: center;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 
+.estilos {
+  width: 166%;
+  height: 400px;
+  background-color: thistle;
+  color: dimgrey;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  text-align: center;
+  align-items: center;
+}
