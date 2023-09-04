@@ -1,30 +1,33 @@
 import { useEffect, useState } from "react"
-import { Loader } from "./Loader";
-import { RenderProductosDetalles } from "./asyncmock";
+import { Spinner } from "./Loader";
+import { RendProdPorCat } from "./asyncmock";
 import ItemDetail from "./ItemDetail";
+import { useParams } from "react-router-dom";
 
-export const ItemDetailContainer = ({ itemsId }) => {
+export const ItemDetailContainer = () => {
   const [isLoading, setIsLoading] = useState(true);
-  const [item, setItem] = useState({});
+  const [item, setItem] = useState(null);
+  const id = useParams().id;
+
   useEffect(() => {
-    RenderProductosDetalles(itemsId)
+    RendProdPorCat(id)
       .then((response) => {
-        console.log(response);
         setItem(response);
       })
       .catch((error) => console.error(error))
       .finally(() => setIsLoading(false))
-  }, [])
+  }, [id])
 
-  if (isLoading) return <Loader />
+  if (isLoading) return <Spinner />
   
-  return (
-    <ItemDetail
-           key={item.id}
-           images={item.images}
-           title={item.title}
-           description={item.description}
-           price={item.price}
-  />
+    return (
+      <ItemDetail {...item}
+/*         key={item.id}
+        images={item.images}
+        title={item.title}
+        category={ item.category}
+        description={item.description }
+        price={item.price } */
+      />
   )
 }

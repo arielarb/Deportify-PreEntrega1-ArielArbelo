@@ -1,11 +1,13 @@
 import carrito from "./media/carrito.png";
 import "./CartWidget.css"
+import { useCartContext } from "../context/cartContext";
 
-function CartWidget({ items }) {
+function CartWidget({ item }) {
+  const {quantityItem} = useCartContext()
   return <>
     <div className="carritoCompleto">
       <img className="carrito" src={carrito} alt="carrito" />
-      <div>{items}</div>
+      <div>{item}</div>
     </div>
     </>
 }

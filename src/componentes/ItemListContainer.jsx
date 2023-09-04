@@ -1,29 +1,33 @@
 import { useEffect, useState } from "react"
 import "./ItemListContainer.css"
-import { Loader } from "./Loader";
-import { RenderProductos } from "./asyncmock";
-import { ItemList } from "./ItemList";
+import { Spinner } from "./Loader";
+import { RenderProductos, RendProdPorCat } from "./asyncmock";
+import { ItemListProd } from "./ItemList";
+import { useParams } from "react-router-dom";
 
-export const ItemListContainer = () => {
+export const ItemListContainer = ({ greeting}) => {
   const [isLoading, setIsLoading] = useState(true);
   const [prod, setProd] = useState([]);
+  const { categoryId} = useParams()
+
   useEffect(() => {
-    RenderProductos()
+    const asyncFunc = categoryId ? RendProdPorCat : RenderProductos
+
+    asyncFunc(categoryId)
+    /* RenderProductos() */
       .then((response) => {
-        console.log(response);
         setProd(response);
       })
       .catch((error) => console.error(error))
       .finally(() => setIsLoading(false))
-  }, [])
+  }, [categoryId])
 
-  /*   return <> 
-    <h1 className="estilos">{texto}</h1>
-  </> */
 
-  if (isLoading) return <Loader />
+  if (isLoading) return <Spinner />
   
   return <>
-    <ItemList className="estilos" ItemList={prod} />
+      <h1>{greeting}</h1>
+      <ItemListProd productos={prod} />
     </>
 }
+

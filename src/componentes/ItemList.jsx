@@ -1,10 +1,20 @@
 import Items from "./Item";
 
-export function ItemList({ ItemList = [] }) {
+export function ItemListProd({ productos }) {
   return (
     <div>
 
-      {ItemList.map((item) => {
+      {productos.map((prod) => <Items key={prod.id} {...prod} />)}
+
+    </div>
+  )
+}
+
+/* export function ItemList({ ItemsList = [] }) {
+  return (
+    <div>
+
+      {ItemsList.map((item) => {
         return (
          <Items
            key={item.id}
@@ -18,4 +28,4 @@ export function ItemList({ ItemList = [] }) {
 
     </div>
   )
-}
+} */

@@ -1,11 +1,11 @@
 .estilos {
+/*    background-color: thistle;  */
   width: 166%;
-  height: 400px;
-  background-color: thistle;
   color: dimgrey;
   display: flex;
+  flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-between;
-  text-align: center;
-  align-items: center;
+   justify-content: space-between;
+   text-align: center;
+  align-items: center;  
 }
