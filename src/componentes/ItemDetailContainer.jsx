@@ -8,6 +8,7 @@ export const ItemDetailContainer = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [item, setItem] = useState(null);
   const id = useParams().id;
+  console.log(id)
 
   useEffect(() => {
     RendProdPorCat(id)

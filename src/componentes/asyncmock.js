@@ -19,9 +19,15 @@ export const RenderProductos = () => {
 }
 
 export const RenderProductosDetalles = (prodId) => {
-  return new Promise((resolve) => {
+  return new Promise((resolve, reject) => {
     setTimeout(() => {
-      resolve(Productos.find(prod => prod.id === prodId))
+      const item = Productos.find(prod => prod.id === prodId)
+
+      if (item) {
+        resolve(item)
+      } else {
+        reject ({error: "no se encontro el producto"})
+      }
     }, 2000)
   })
 }

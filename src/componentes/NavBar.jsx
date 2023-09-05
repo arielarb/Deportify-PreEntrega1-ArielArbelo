@@ -13,10 +13,10 @@ export function NavBar() {
         <img className="logo" src={logoDeportify} alt="logo Deportify" />
       </Link>
       <div>
-        <Link to="/category/Zapatillas"> <Boton texto="Zapatillas" /> </Link> 
-        <Link to="/category/Pantalones"> <Boton texto="Pantalones" /> </Link> 
-        <Link to="/category/Remeras"> <Boton texto="Remeras" /> </Link> 
-        <Link to="/category/camperas"> <Boton texto="Camperas" /> </Link> 
+        <Link to="/productos/Zapatillas"> <Boton texto="Zapatillas" /> </Link> 
+        <Link to="/productos/Pantalones"> <Boton texto="Pantalones" /> </Link> 
+        <Link to="/productos/Remeras"> <Boton texto="Remeras" /> </Link> 
+        <Link to="/productos/Camperas"> <Boton texto="Camperas" /> </Link> 
       </div> 
       <CartWidget item={quantityItem} />
     </nav>
