@@ -2,7 +2,7 @@ import { useCartContext } from "../context/cartContext"
 import { useState } from "react"
 
 export const CartToggle = () => {
-  const {decreaseQuantity, increaseQuantity } = useCartContext()
+   const {decreaseQuantity, increaseQuantity } = useCartContext()
   
   const[buyItem, setBuyItem] = useState(0)
 
@@ -12,16 +12,19 @@ export const CartToggle = () => {
   };
   
   const handleClickLessButton = () => {
-    if (buyItem > 0) {
+    if (buyItem > 1) {
       decreaseQuantity();
       setBuyItem(buyItem - 1);
     }
   }; 
   
+
   return (
     <div>
-         <span>Comprar:  </span>
-         <button onClick={handleClickLessButton}>-</button> { buyItem } <button onClick={handleClickSumButton}>+</button>
+      <span>Comprar:  </span>
+      <button onClick={handleClickLessButton}>-</button> {buyItem} <button onClick={handleClickSumButton}>+</button>
+      <br /><br />
+      <button>Agregar al carrito</button>
          </div >
        )
 }

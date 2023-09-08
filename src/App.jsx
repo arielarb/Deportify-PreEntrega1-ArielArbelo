@@ -38,9 +38,9 @@ function App() {
     <BrowserRouter>
      <NavBar />
       <Routes>
-        <Route path="/" element={<> <ItemListContainer greeting="¡Bienvenidos!"/> </>} /> 
-        <Route path="/productos/:category" element={<><ItemListContainer/></>} /> 
-         <Route path="/item/:id" element={<><ItemDetailContainer /></>} />  
+        <Route path="/" element={<ItemListContainer greeting="¡Bienvenidos!"/>} /> 
+        <Route path="/productos/:category" element={<ItemListContainer/>} /> 
+         <Route path="/item/:id" element={<ItemDetailContainer />} />  
         <Route path='*' element={<h1>404 NOT FOUND</h1> } />
       </Routes>
     </BrowserRouter>

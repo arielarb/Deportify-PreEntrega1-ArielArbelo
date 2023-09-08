@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import { Spinner } from "./Loader";
-import { RendProdPorCat } from "./asyncmock";
+import { RenderProductosDetalles } from "./asyncmock";
 import ItemDetail from "./ItemDetail";
 import { useParams } from "react-router-dom";
 
@@ -11,7 +11,7 @@ export const ItemDetailContainer = () => {
   console.log(id)
 
   useEffect(() => {
-    RendProdPorCat(id)
+    RenderProductosDetalles(id)
       .then((response) => {
         setItem(response);
       })
