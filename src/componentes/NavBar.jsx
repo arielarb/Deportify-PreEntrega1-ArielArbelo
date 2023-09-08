@@ -18,7 +18,7 @@ export function NavBar() {
         <Link to="/productos/Remeras"> <Boton texto="Remeras" /> </Link> 
         <Link to="/productos/Camperas"> <Boton texto="Camperas" /> </Link> 
       </div> 
-      <CartWidget item={quantityItem} />
+      <Link to="/carrito"><CartWidget item={quantityItem} /></Link>
     </nav>
   )
 }

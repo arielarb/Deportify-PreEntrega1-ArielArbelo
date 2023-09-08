@@ -5,6 +5,7 @@ import { ItemListContainer } from './componentes/ItemListContainer';
 import { ItemDetailContainer } from './componentes/ItemDetailContainer';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { CartProvider } from './context/cartContext.jsx';
+import { CartCheckOut } from './componentes/CartCheckOut';
 /* import { doc, getDoc} from "./firebase/firestone";
 import { useEffect } from 'react';
 import { firestore } from "./firebase/client"; */
@@ -40,7 +41,8 @@ function App() {
       <Routes>
         <Route path="/" element={<ItemListContainer greeting="¡Bienvenidos!"/>} /> 
         <Route path="/productos/:category" element={<ItemListContainer/>} /> 
-         <Route path="/item/:id" element={<ItemDetailContainer />} />  
+        <Route path="/item/:id" element={<ItemDetailContainer />} />  
+        <Route path="/carrito" element={<CartCheckOut />} />  
         <Route path='*' element={<h1>404 NOT FOUND</h1> } />
       </Routes>
     </BrowserRouter>
