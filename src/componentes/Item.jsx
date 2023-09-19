@@ -2,10 +2,10 @@ import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import { Link } from 'react-router-dom';
 
-function Items({ id, title, images, price}) {
+function Items({ id, title, image, price}) {
   return (
     <Card style={{ width: '18rem', margin: '10px', padding: '7px', backgroundColor: 'grey'}}>
-      <Card.Img variant="top" src={images} style={{ width: '100%' }} /> 
+      <Card.Img variant="top" src={image} style={{ width: '100%' }} /> 
       < Card.Body style={{ color: 'white'}}>
         <Card.Title>{title}</Card.Title>
         <br /> 

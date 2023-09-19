@@ -3,6 +3,8 @@ import { Spinner } from "./Loader";
 import { RenderProductosDetalles } from "./asyncmock";
 import ItemDetail from "./ItemDetail";
 import { useParams } from "react-router-dom";
+import {doc, getDoc} from "firebase/firestore"
+import { firestore } from "../firebase/config"
 
 export const ItemDetailContainer = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -11,15 +13,22 @@ export const ItemDetailContainer = () => {
   console.log(id)
 
   useEffect(() => {
-    RenderProductosDetalles(id)
+    const productoRef = doc(firestore,"productos",id)
+    getDoc(productoRef)
+    .then((response) => {
+      setItem(
+         {...response.data(), id: response.id} 
+         ) 
+        } )
+    /* RenderProductosDetalles(id)
       .then((response) => {
         setItem(response);
-      })
+      })*/
       .catch((error) => console.error(error))
-      .finally(() => setIsLoading(false))
+      .finally(() => setIsLoading(false)) 
   }, [id])
 
-  if (isLoading) return <Spinner />
+/*   if (isLoading) return <Spinner /> */
   
     return (
       <ItemDetail {...item}
