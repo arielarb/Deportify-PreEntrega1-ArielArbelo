@@ -4,7 +4,7 @@ import { Spinner } from "./Loader";
 /* import { RenderProductos} from "./asyncmock"; */
 import { ItemListProd } from "./ItemList";
 import { useParams } from "react-router-dom";
-import { collection, getDocs } from "firebase/firestore";
+import { collection, getDocs, query, where } from "firebase/firestore";
 import { firestore } from "../firebase/config"
 
 export const ItemListContainer = ({ greeting}) => {
@@ -14,9 +14,10 @@ export const ItemListContainer = ({ greeting}) => {
 
   useEffect(() => {
     const productosFS = collection(firestore, "Productos")
-    getDocs(productosFS)
+    const q = category ? query(productosFS, where("category", "==", category)) : productosFS;
+    getDocs(q)
     .then((response) => {
-      setProd(
+      setProd( 
         response.docs.map((doc) => {
           return {...doc.data(), id: doc.id}
         })
