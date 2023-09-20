@@ -10,12 +10,12 @@ export const ItemDetailContainer = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [item, setItem] = useState(null);
   const id = useParams().id;
-  console.log(id)
 
   useEffect(() => {
-    const productoRef = doc(firestore,"productos",id)
-    getDoc(productoRef)
+    const docRef = doc(firestore, "Productos", id);
+    getDoc(docRef)
     .then((response) => {
+      console.log(response.data())
       setItem(
          {...response.data(), id: response.id} 
          ) 
@@ -28,7 +28,7 @@ export const ItemDetailContainer = () => {
       .finally(() => setIsLoading(false)) 
   }, [id])
 
-/*   if (isLoading) return <Spinner /> */
+   if (isLoading) return <Spinner /> 
   
     return (
       <ItemDetail {...item}
