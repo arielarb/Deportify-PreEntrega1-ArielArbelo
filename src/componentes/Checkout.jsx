@@ -4,7 +4,7 @@ import { useForm } from 'react-hook-form';
 import { collection, addDoc } from "firebase/firestore";
 import { firestore } from '../firebase/config';
 
-export function Checkout = () => {
+const Checkout = () => {
 
     
     const [pedidoId, setPedidoId] = useState("");
@@ -55,3 +55,5 @@ export function Checkout = () => {
     </div>
   )
 }
+
+export default Checkout
