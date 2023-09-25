@@ -5,7 +5,7 @@ export const CartToggle = ( {cantidad, handleRestar, handleSumar, handleAgregar}
   return (
     <div>
 
-        <div>
+        <div className='toggle'>
             <button onClick={handleRestar}>-</button>
             <p>{cantidad}</p>
             <button onClick={handleSumar}>+</button>
