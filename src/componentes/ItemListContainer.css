@@ -1,7 +1,7 @@
 .estilos {
 /*    background-color: thistle;  */
-  width: 166%;
-  color: dimgrey;
+  width: auto;
+  color: white;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;

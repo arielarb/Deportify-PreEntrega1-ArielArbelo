@@ -2,19 +2,19 @@ import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import { Link } from 'react-router-dom';
 
-function Items({ id, title, image, price}) {
+function Items({...item}) {
   return (
     <Card style={{ width: '18rem', margin: '10px', padding: '7px', backgroundColor: 'grey'}}>
-      <Card.Img variant="top" src={image} style={{ width: '100%' }} /> 
+      <Card.Img variant="top" src={item.image} style={{ width: '100%' }} /> 
       < Card.Body style={{ color: 'white'}}>
-        <Card.Title>{title}</Card.Title>
+        <Card.Title>{item.title}</Card.Title>
         <br /> 
          <Card.Text>
 {/*           {description} 
           <br /> */}
-          Precio: {price}
+          Precio: {item.price}
         </Card.Text>
-        <Link to={`/item/${id}`}> <Button variant="primary">Ver detalles</Button> </Link>  
+        <Link to={`/item/${item.id}`}> <Button variant="primary">Ver detalles</Button> </Link>  
       </Card.Body>
     </Card>
   );

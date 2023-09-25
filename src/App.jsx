@@ -6,32 +6,10 @@ import { ItemDetailContainer } from './componentes/ItemDetailContainer';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { CartProvider } from './context/cartContext.jsx';
 import { CartCheckOut } from './componentes/CartCheckOut';
-/* import { doc, getDoc} from "./firebase/firestone";
-import { useEffect } from 'react';
-import { firestore } from "./firebase/client"; */
+import Checkout from './componentes/Checkout';
+
 
 function App() {
-   /* useEffect(() => {
-      const q = query(
-      collection(firestore, "items"),
-      where("price", ">", 50),  
-      orderBy("price", "desc")
-    );
-    getDocs(q).then((snapshot) => {
-      console.log(snapshot);
-      snapshot.forEach((doc) => console.log(doc.data()));
-    });
-
-    const docRef = doc(firestore, "Productos", "Zapatillas")
-    getDoc(docRef).then((snapshot) => {
-      console.log({ snapshot })
-      if (snapshot.exists()) {
-        console.log("La información del documento es: ", snapshot.data())
-      } else {
-        console.log("El documento no existe")
-      }
-    }) 
-  }, [])*/
   
   return (
   <>
@@ -42,7 +20,8 @@ function App() {
         <Route path="/" element={<ItemListContainer greeting="¡Bienvenidos!"/>} /> 
         <Route path="/productos/:category" element={<ItemListContainer/>} /> 
         <Route path="/item/:id" element={<ItemDetailContainer />} />  
-        <Route path="/carrito" element={<CartCheckOut />} />  
+        <Route path="/carrito" element={<CartCheckOut />} />
+        <Route path="/checkout" element={<Checkout />}/>  
         <Route path='*' element={<h1>404 NOT FOUND</h1> } />
       </Routes>
     </BrowserRouter>
